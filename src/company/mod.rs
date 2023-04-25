@@ -7,6 +7,7 @@ pub struct Company {
     Vector holds names employees in the department
     */
     pub register: HashMap<String, Vec<String>>,
+    pub employees: Vec<Employee>,
 }
 
 impl Company {
@@ -14,6 +15,7 @@ impl Company {
     pub fn new() -> Self {
         Company {
             register: HashMap::new(),
+            employees: Vec::new(),
         }
     }
 
@@ -34,7 +36,10 @@ impl Company {
         println!(
             "Added {} to {} department",
             employee.name, employee.department
-        )
+        );
+
+        // Added employee to employee list
+        self.employees.push(employee);
     }
 
     /*
